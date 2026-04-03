@@ -34,8 +34,9 @@ function Footer() {
         <div className="max-w-7xl mx-auto relative mb-4">
           {/* 1. Logo & Brand */}
           <div className="gap-2  group cursor-pointer">
-            <h1 className="text-white lg:text-9xl text-6xl font-bold">Aiverse</h1>
-          </div>
+<h1 className="relative z-10 text-white/90 lg:text-9xl text-6xl font-bold mix-blend-overlay tracking-tighter">
+    Aiverse
+  </h1>          </div>
 
           {/* Copyright Section with &copy; */}
           <p className='text-zinc-400'>
