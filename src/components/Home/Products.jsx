@@ -105,7 +105,7 @@ function Products() {
     <div className="bg-black min-h-screen">
       {/* Decorative Top Divider */}
       <div className='bg-zinc-900/30 p-1 lg:mt-10 border-y border-white/5
-        bg-[repeating-linear-gradient(45deg,transparent,transparent_8px,rgba(255,255,255,0.02)_8px,rgba(255,255,255,0.02)_9px)]
+        bg-[repeating-linear-gradient(45deg,transparent,transparent_5px,rgba(255,255,255,0.02)_20px,rgba(255,255,255,0.02)_20px)]
       ' ></div>
 
       <div className='max-w-7xl mx-auto'>
