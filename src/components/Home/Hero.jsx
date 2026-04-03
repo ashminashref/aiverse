@@ -1,6 +1,7 @@
 import React from 'react'
 import Aurora from "../../UI/Aurora";
 
+
 function Hero() {
   return (
     /* 1. The Parent: 'relative' creates a coordinate system for the Aurora */
@@ -31,7 +32,7 @@ function Hero() {
         </p>
 
         <div className="flex flex-col mt-8 md:flex-row gap-4">
-          <button className="bg-zinc-100 disb  ease-in-out duration-200 hover:bg-zinc-400 text-black px-6 py-2 rounded-4xl w-full md:w-auto transition-transform active:scale-95">
+          <button disabled = {true} className="bg-zinc-100  text-black px-6 py-2 rounded-4xl w-full md:w-auto ">
             Proudly Open Sourced
           </button>
           
