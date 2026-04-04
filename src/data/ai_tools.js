@@ -12,9 +12,19 @@ export const allToolsData = [
     id: 2,
     category: "Code Assistants",
     tools: [
-      { id: 201, name: "Cursor", tagline: "AI Code Editor", description: "An AI-native fork of VS Code that understands your whole codebase.", link: "https://cursor.com", src: "https://unavatar.io/cursor.com" },
-      { id: 202, name: "GitHub Copilot", tagline: "GitHub", description: "The world's most widely used AI programmer for real-time autocomplete.", link: "https://github.com", src: "https://unavatar.io/github.com" },
-      { id: 203, name: "Windsurf", tagline: "Codeium", description: "The first agentic IDE with step-by-step project execution.", link: "https://codeium.com", src: "https://unavatar.io/codeium.com" }
+      { id: 201, name: "GitHub Copilot", tagline: "AI Pair Programmer", description: "AI pair programmer that suggests code inside your editor.", link: "https://github.com/copilot", src: "https://unavatar.io/github/github" },
+      { id: 202, name: "Cursor", tagline: "AI Code Editor", description: "AI-native code editor with autonomous multi-file editing.", link: "https://cursor.sh", src: "https://unavatar.io/cursor.sh" },
+      { id: 203, name: "Replit AI", tagline: "Cloud Coding AI", description: "AI assistant inside Replit for coding and app deployment.", link: "https://replit.com", src: "https://unavatar.io/replit.com" },
+      { id: 204, name: "Tabnine", tagline: "Code Completion AI", description: "Privacy-focused AI code completion for all major IDEs.", link: "https://tabnine.com", src: "https://unavatar.io/tabnine.com" },
+      { id: 205, name: "Amazon CodeWhisperer", tagline: "AWS Coding AI", description: "AWS's AI coding assistant with security scanning.", link: "https://aws.amazon.com/codewhisperer", src: "https://unavatar.io/aws.amazon.com" },
+      { id: 206, name: "Codeium", tagline: "Free Code AI", description: "Free AI code autocomplete supporting 70+ languages.", link: "https://codeium.com", src: "https://unavatar.io/codeium.com" },
+      { id: 207, name: "Windsurf", tagline: "Agentic IDE", description: "Agentic coding IDE by Codeium for full-project AI assistance.", link: "https://windsurf.ai", src: "https://unavatar.io/windsurf.ai" },
+      { id: 208, name: "Bolt.new", tagline: "AI App Builder", description: "Browser-based AI app builder powered by StackBlitz.", link: "https://bolt.new", src: "https://unavatar.io/bolt.new" },
+      { id: 209, name: "Lovable", tagline: "No-code AI Builder", description: "Build and ship web apps from plain English descriptions.", link: "https://lovable.dev", src: "https://unavatar.io/lovable.dev" },
+      { id: 210, name: "v0 by Vercel", tagline: "UI Generation AI", description: "Generates React UI components from text prompts.", link: "https://v0.dev", src: "https://unavatar.io/v0.dev" },
+      { id: 211, name: "Claude Code", tagline: "Terminal AI Coding", description: "Anthropic's terminal-based agentic coding assistant.", link: "https://claude.ai", src: "https://unavatar.io/claude.ai" },
+      { id: 212, name: "Sourcegraph Cody", tagline: "Codebase AI", description: "AI code assistant with codebase-aware context.", link: "https://sourcegraph.com/cody", src: "https://unavatar.io/sourcegraph.com" },
+      { id: 213, name: "Pieces for Developers", tagline: "Snippet AI Manager", description: "AI-powered snippet manager and workflow assistant.", link: "https://pieces.app", src: "https://unavatar.io/pieces.app" }
     ]
   },
   {
@@ -38,7 +48,15 @@ export const allToolsData = [
     category: "Chatbots",
     tools: [
       { id: 501, name: "ChatGPT", tagline: "OpenAI", description: "The leading conversational AI for brainstorming and reasoning.", link: "https://chat.openai.com", src: "https://unavatar.io/chat.openai.com" },
-      { id: 502, name: "Claude", tagline: "Anthropic", description: "Safe, reliable AI with a massive context window for long-form analysis.", link: "https://claude.ai", src: "https://unavatar.io/claude.ai" }
+      { id: 502, name: "Claude", tagline: "Anthropic", description: "Safe, reliable AI with a massive context window for long-form analysis.", link: "https://claude.ai", src: "https://unavatar.io/claude.ai" },
+      { id: 503, name: "Gemini", tagline: "Google AI", description: "Google's multimodal AI assistant deeply integrated with Google services.", link: "https://gemini.google.com/", src: "https://unavatar.io/gemini.google.com" },
+      { id: 504, name: "Grok", tagline: "xAI", description: "xAI's assistant on X (Twitter) for fact-checking and real-time info", link: "https://grok.x.ai/", src: "https://unavatar.io/grok.x.ai" },
+      { id: 505, name: "Copilot", tagline: "Microsoft", description: "Microsoft's AI assistant embedded across Office 365 apps", link: "https://copilot.microsoft.com/", src: "https://unavatar.io/copilot.microsoft.com" },
+      { id: 506, name: "Meta Ai", tagline: "Meta", description: "Meta's assistant across WhatsApp, Instagram, and Facebook", link: "https://www.meta.ai/", src: "https://unavatar.io/www.meta.ai" },
+      { id: 507, name: "Perplexity", tagline: "AI Search", description: "AI-powered search that returns cited, concise answers", link: "https://www.perplexity.ai/", src: "https://unavatar.io/www.perplexity.ai" },
+      { id: 508, name: "You.com", tagline: "AI Search", description: "AI search engine with web browsing and chat capabilities", link: "https://you.com/", src: "https://unavatar.io/you.com" },
+      { id: 509, name: "Poe", tagline: "Quora", description: "Aggregator giving access to multiple AI models in one place", link: "https://poe.com/", src: "https://unavatar.io/poe.com" },
+      { id: 510, name: "HuggingChat", tagline: "Hugging Face", description: "Open-source AI chatbot powered by Hugging Face models", link: "https://huggingface.co/chat", src: "https://unavatar.io/huggingface.co" },
     ]
   },
   {
@@ -46,7 +64,20 @@ export const allToolsData = [
     category: "Writing",
     tools: [
       { id: 601, name: "Grammarly", tagline: "AI Editor", description: "Real-time writing support to fix grammar and improve clarity.", link: "https://grammarly.com", src: "https://unavatar.io/grammarly.com" },
-      { id: 602, name: "Jasper", tagline: "Marketing Copy", description: "Generates high-converting marketing content and blog posts.", link: "https://jasper.ai", src: "https://unavatar.io/jasper.ai" }
+      { id: 602, name: "Jasper", tagline: "Marketing Copy", description: "Generates high-converting marketing content and blog posts.", link: "https://jasper.ai", src: "https://unavatar.io/jasper.ai" },
+      { id: 603, name: "Copy.ai", tagline: "AI Copywriting", description: "Generates sales copy, emails, and social media posts instantly.", link: "https://copy.ai", src: "https://unavatar.io/copy.ai" },
+      { id: 604, name: "Writesonic", tagline: "SEO Writer", description: "AI writer for SEO articles, ads, and landing pages.", link: "https://writesonic.com", src: "https://unavatar.io/writesonic.com" },
+      { id: 605, name: "Rytr", tagline: "Budget AI Writer", description: "Affordable AI writing assistant for blogs and short-form content.", link: "https://rytr.me", src: "https://unavatar.io/rytr.me" },
+      { id: 606, name: "Notion AI", tagline: "Workspace AI", description: "AI writing and summarization built inside Notion workspace.", link: "https://notion.so", src: "https://unavatar.io/notion.so" },
+      { id: 607, name: "QuillBot", tagline: "Paraphrasing Tool", description: "AI paraphrasing and rewriting tool for students and writers.", link: "https://quillbot.com", src: "https://unavatar.io/quillbot.com" },
+      { id: 608, name: "Wordtune", tagline: "Sentence Rewriter", description: "AI that rewrites your sentences for clarity and tone.", link: "https://wordtune.com", src: "https://unavatar.io/wordtune.com" },
+      { id: 619, name: "Sudowrite", tagline: "Creative Writing AI", description: "AI creative writing companion for fiction authors.", link: "https://sudowrite.com", src: "https://unavatar.io/sudowrite.com" },
+      { id: 610, name: "Anyword", tagline: "Marketing AI", description: "AI copywriting with performance prediction for marketers.", link: "https://anyword.com", src: "https://unavatar.io/anyword.com" },
+      { id: 611, name: "Hypotenuse AI", tagline: "E-commerce Copy", description: "Generates product descriptions and e-commerce copy at scale.", link: "https://hypotenuse.ai", src: "https://unavatar.io/hypotenuse.ai" },
+      { id: 612, name: "Ink", tagline: "SEO Content AI", description: "SEO-focused AI content writer with optimization scoring.", link: "https://inkforall.com", src: "https://unavatar.io/inkforall.com" },
+      { id: 613, name: "Longshot AI", tagline: "Fact-based Writing", description: "AI writer that produces fact-checked long-form content.", link: "https://longshot.ai", src: "https://unavatar.io/longshot.ai" },
+      { id: 614, name: "Article Forge", tagline: "Auto Article Writer", description: "Fully automated AI article writer for SEO content.", link: "https://articleforge.com", src: "https://unavatar.io/articleforge.com" },
+      { id: 615, name: "Scalenut", tagline: "SEO Platform", description: "AI content research and writing platform for SEO.", link: "https://scalenut.com", src: "https://unavatar.io/scalenut.com" }
     ]
   },
   {
