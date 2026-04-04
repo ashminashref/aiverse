@@ -1,17 +1,16 @@
 "use client";
-import React, { useEffect, useId,  useState } from "react";
+import React, { useEffect, useId, useRef, useState } from "react"; // Added useRef back
 import { useParams, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 import { ArrowLeft, ExternalLink, X } from "lucide-react";
 import { allToolsData } from "@/data/ai_tools";
-import Footer from "@/common/Footer";
 
 export function ExpandableCardDemo() {
   const { slug } = useParams();
   const navigate = useNavigate();
   const [active, setActive] = useState(null);
-  // const ref = useRef(null);
+  const ref = useRef(null); // RESTORED THIS
   const id = useId();
 
   const normalize = (str) => str?.toLowerCase().replace(/[^a-z0-9]/g, "");
@@ -25,10 +24,16 @@ export function ExpandableCardDemo() {
   const tools = categoryData ? categoryData.tools : [];
 
   useEffect(() => {
+    function onKeyDown(event) {
+      if (event.key === "Escape") setActive(null);
+    }
     document.body.style.overflow = active ? "hidden" : "auto";
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
   }, [active]);
 
-  useOutsideClick( () => setActive(null));
+  // RESTORED REF: Hooks need the ref to know what is "inside" vs "outside"
+  useOutsideClick(ref, () => setActive(null));
 
   return (
     <div className="min-h-screen bg-black text-white selection:bg-zinc-500/30">
@@ -58,7 +63,6 @@ export function ExpandableCardDemo() {
             </div>
           </div>
 
-          {/* 3D-ish Visual placeholder to match the image right side */}
           <div className="hidden lg:block relative w-96 h-96">
             <div className="absolute inset-0 bg-zinc-800/20 rounded-3xl border border-white/5 rotate-3 scale-95" />
             <div className="absolute inset-0 bg-zinc-900 rounded-3xl border border-white/10 -rotate-3 flex items-center justify-center overflow-hidden">
@@ -82,7 +86,6 @@ export function ExpandableCardDemo() {
               onClick={() => setActive(tool)}
               className="group relative p-6 bg-zinc-900/40 border border-zinc-800 hover:border-zinc-500 rounded-3xl cursor-pointer transition-all duration-500 overflow-hidden"
             >
-               {/* Background Glow */}
                <div className="absolute -right-4 -bottom-4 w-24 h-24 bg-white/5 blur-3xl rounded-full group-hover:bg-white/10 transition-colors" />
 
               <div className="flex flex-col gap-4">
@@ -125,7 +128,7 @@ export function ExpandableCardDemo() {
             
             <motion.div
               layoutId={`card-${active.name}-${id}`}
-              ref={ref}
+              ref={ref} // THIS MUST MATCH THE USE REF ABOVE
               className="relative w-full max-w-[550px] bg-zinc-950 border border-white/10 rounded-[2.5rem] overflow-hidden shadow-2xl z-20"
             >
               <div className="p-10">
@@ -133,7 +136,9 @@ export function ExpandableCardDemo() {
                   <motion.div layoutId={`image-${active.name}-${id}`} className="w-20 h-20 rounded-3xl bg-black border border-zinc-800 p-4">
                     <img src={active.src} alt={active.name} className="w-full h-full object-contain" />
                   </motion.div>
-                  <button onClick={() => setActive(null)} className="p-3 bg-zinc-900 rounded-full text-zinc-500 hover:text-white"><X size={20}/></button>
+                  <button onClick={() => setActive(null)} className="p-3 bg-zinc-900 rounded-full text-zinc-500 hover:text-white transition-colors">
+                    <X size={20}/>
+                  </button>
                 </div>
 
                 <motion.h3 layoutId={`title-${active.name}-${id}`} className="text-4xl font-bold text-white tracking-tighter mb-4">
@@ -144,17 +149,27 @@ export function ExpandableCardDemo() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                   <a href={active.link} target="_blank" className="flex-1 py-4 bg-white text-black text-center font-bold rounded-2xl hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2">
-                      Launch SDK <ExternalLink size={18} />
+                   <a 
+                    href={active.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()} // STOPS MODAL FROM GLITCHING
+                    className="flex-1 py-4 bg-white text-black text-center font-bold rounded-2xl hover:bg-zinc-200 transition-colors flex items-center justify-center gap-2"
+                   >
+                      Launch Tool <ExternalLink size={18} />
                    </a>
-                   <button onClick={() => setActive(null)} className="flex-1 py-4 bg-zinc-900 text-white font-medium rounded-2xl border border-zinc-800">Close</button>
+                   <button 
+                    onClick={() => setActive(null)} 
+                    className="flex-1 py-4 bg-zinc-900 text-white font-medium rounded-2xl border border-zinc-800 hover:bg-zinc-800 transition-colors"
+                   >
+                     Close
+                   </button>
                 </div>
               </div>
             </motion.div>
           </div>
         )}
       </AnimatePresence>
-      
     </div>
   );
 }
