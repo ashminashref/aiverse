@@ -21,7 +21,7 @@ function Hero() {
 
       {/* 3. The Content: 'relative' and higher 'z-index' keeps it in front */}
       <div className="relative z-20 py-12 px-6 md:px-12 max-w-7xl mx-auto w-full"> 
-        <h1 className="text-white text-4xl md:text-6xl lg:text-7xl max-w-xl ">
+        <h1 className="text-white text-4xl  md:text-6xl lg:text-7xl max-w-xl ">
           Stop searching, <br /> Start Creating With The Right
           <span className="text-indigo-300"> AI.</span>
         </h1>

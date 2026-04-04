@@ -1,4 +1,4 @@
-[
+export const allToolsData = [
     {
         "id": 1,
         "category": "Chatbots",
