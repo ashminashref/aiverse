@@ -4,7 +4,7 @@ import Hero from "../components/Home/Hero";
 import People from "../components/Home/People";
 import Products from "../components/Home/Products";
 import Footer from "../common/Footer";
-import AnimatedList from "@/UI/Animatedlist";
+import AnimatedList from "../UI/AnimatedList";
 
 const globalAiRankings = [
   {
